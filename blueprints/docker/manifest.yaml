@@ -1,0 +1,21 @@
+schema: blueprints/v0.1
+version: v0.1
+name: docker
+config:
+  type: object
+  properties:
+    image:
+      type: string
+      name: Docker image
+    registry:
+      type: object
+      properties:
+        server:
+          type: string
+          name: Registry server
+        username:
+          type: string
+          name: Registry username
+        password:
+          type: string
+          name: Registry password

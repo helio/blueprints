@@ -1,0 +1,33 @@
+# $schema: http://json-schema.org/draft-07/schema#
+version: v0.1
+type: object
+title: Job Blueprints
+required:
+  - name
+  - version
+  - schema
+properties:
+  name:
+    type: string
+    title: BP name
+    minLength: 3
+  version:
+    type: string
+    title: BP version
+  schema:
+    type: string
+    title: This schema
+  image:
+    type: string
+    title: Docker image
+  env:
+    type: object
+    title: Possible env variables to be passed to the running executable
+  config:
+    type: object
+    title: Executable configuration
+  cmd:
+    type: array
+    name: List of CMDs to run besides running the container
+    items:
+      type: string
