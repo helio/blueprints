@@ -1,0 +1,44 @@
+schema: blueprints/v0.1
+version: v0.1
+name: ep85
+image: hub.helio.dev:4567/helio/runner/ep85:latest
+config:
+  type: object
+  properties:
+    idf:
+      type: object
+      name: IDF input
+      properties:
+        file:
+          type: string
+          name: IDF remote file path
+        hash:
+          type: string
+          name: IDF remote file path hash
+        hash_algorithm:
+          type: string
+          name: Hash algorithm
+          enum:
+            - sha1
+    epw:
+      type: object
+      name: EPW input
+      properties:
+        file:
+          type: string
+          name: EPW remote file path
+        hash:
+          type: string
+          name: EPW remote file path hash
+        hash_algorithm:
+          type: string
+          name: Hash algorithm
+          enum:
+            - sha1
+    upload:
+      type: object
+      name: Output location
+      properties:
+        url:
+          type: string
+          name: URL to upload to

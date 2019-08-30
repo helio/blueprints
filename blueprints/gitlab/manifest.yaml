@@ -1,0 +1,22 @@
+schema: blueprints/v0.1
+name: gitlab
+version: v0.1
+image: gitlab/gitlab-runner
+cmd:
+  - register --non-interactive --url {endpoint} --registration-token {token} --tag-list {tags}
+config:
+  type: object
+  required:
+    - endpoint
+    - token
+  properties:
+    endpoint:
+      type: string
+      pattern: "^[a-z]{1,}:\/\/.*"
+      title: GitLab endpoint URL
+    token:
+      type: string
+      title: GitLab registration token
+    tags:
+      type: string
+      title: GitLab runner tags

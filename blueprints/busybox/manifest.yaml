@@ -1,0 +1,20 @@
+schema: blueprints/v0.1
+version: v0.1
+name: busybox
+image: hub.helio.dev:4567/helio/runner/busybox:latest
+env:
+  type: object
+  required:
+    - LIMIT
+    - SLEEP_SECONDS
+  properties:
+    LIMIT:
+      type: integer
+      minimum: 1
+      maximum: 1000
+      title: Limit indicating how many iterations
+    SLEEP_SECONDS:
+      type: number
+      minimum: 0.1
+      maximum: 60
+      title: Sleep in seconds between iterations
